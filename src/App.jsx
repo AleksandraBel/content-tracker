@@ -1,5 +1,26 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import History from "./pages/History";
+import Profile from "./pages/Profile";
 
-export default function App() {
-  return <h1 className="text-3xl font-bold text-blue-500">Hello Tailwind!</h1>;
+function App() {
+  return (
+    <>
+      <Navbar />
+      <div className="container mx-auto px-4 py-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
+    </>
+  );
 }
+
+export default App;
